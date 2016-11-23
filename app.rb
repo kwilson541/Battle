@@ -11,7 +11,6 @@ enable :sessions
   post '/names' do
     session[:player1] = params[:player1]
     session[:player2] = params[:player2]
-
     redirect '/play'
   end
 
