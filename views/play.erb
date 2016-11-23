@@ -1,6 +1,6 @@
-<%= @player1 %> vs <%= @player2 %> - are you ready?
+<%= @player1.name %> vs <%= @player2.name %> - are you ready?
 <br>
-<%= @player2 %> has 200 HP
+<%= @player2.name %> has <%= @player2.hp %> HP
 <br>
 
 <form action="/attack" method="get">

@@ -17,14 +17,18 @@ enable :sessions
 
   get '/play' do
     p params
-    @player1 = $player1.name
-    @player2 = $player2.name
+    @player1 = $player1
+    @player2 = $player2
+    # @player1_hp = $player1.hp
+    # @player2_hp = $player2.hp
     erb(:play)
   end
 
   get "/attack" do
-    @player1 = $player1.name
-    @player2 = $player2.name
+    @player1 = $player1
+    @player2 = $player2
+    # @player1_hp = $player1.hp
+    # @player2_hp = $player2.hp
     erb(:attack)
   end
 
