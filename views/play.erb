@@ -3,9 +3,9 @@
 <html>
 <body>
   <div>
-    <h1> Player 1: <%= @player1.name %> </h1>
+    <h1> Player 1: <%= @game.player1.name %> </h1>
     <h1>VS</h1>
-    <h1> Player 2: <%= @player2.name %> HP = <%= @player2.hp %></h1>
+    <h1> Player 2: <%= @game.player2.name %> HP = <%= @game.player2.hp %></h1>
   </div>
   <form action='/attack' method='get'>
     <input type='submit' value='Attack!'></input>
