@@ -2,7 +2,7 @@ require 'player.rb'
 
 describe Player do
   context "when players method return_name" do
-    let(:user_name) {double(:user_name)}
+    user_name = "Bill"
     subject(:player) {described_class.new(user_name)}
     it "should return the name" do
       expect(player.name).to eq(user_name)
