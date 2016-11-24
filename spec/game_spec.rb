@@ -19,8 +19,17 @@ let(:player2) { double(:player2) }
 		expect(game.inactive_player).to eq player2
 	end
 
+  it 'should be initialized with a dead player variable' do
+    expect(game.dead_player).to eq nil
+  end
+
 
 	context '#attack' do
+    before do
+      allow(player2).to receive(:hp).and_return(20)
+      allow(player1).to receive(:hp).and_return(20)
+    end
+
 
 		it 'should be able to attack another player' do
 			expect(player2).to receive(:reduce_hp)
@@ -39,5 +48,14 @@ let(:player2) { double(:player2) }
 			expect(game.inactive_player).to eq player1
 		end
 
+    context 'dead player' do
+
+      it 'should test a dead player is set' do
+        allow(player2).to receive(:reduce_hp)
+        allow(player2).to receive(:hp).and_return(0)
+        game.attack(player2)
+        expect(game.dead_player).to eq player2
+      end
+    end
 	end
 end
