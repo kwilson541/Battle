@@ -9,7 +9,7 @@ describe "Entering names", :type => :feature do
     fill_in "player2_name", :with => "Foo"
     click_button "SUBMIT"
 
-    expect(page.current_path).to eq("/names")
+    expect(page.current_path).to eq("/play")
     expect(page).to have_text("Bill")
     expect(page).to have_text("Foo")
   end
