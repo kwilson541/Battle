@@ -11,9 +11,13 @@ let(:player2) { double(:player2) }
 		expect(game.player1).to eq player1
 	end
 
-  it 'should be initialized with an active player' do
-    expect(game.active_player).to eq player1
-  end
+	it 'should be initialized with an active player' do
+		expect(game.active_player).to eq player1
+	end
+
+	it 'should be initialized with an inactive player' do
+		expect(game.inactive_player).to eq player2
+	end
 
 
 	context '#attack' do
@@ -23,11 +27,17 @@ let(:player2) { double(:player2) }
 			game.attack(player2)
 		end
 
-    it 'should test active player is switched after an attack' do
-      allow(player2).to receive(:reduce_hp)
-      game.attack(player2)
-      expect(game.active_player).to eq player2
-    end
+		it 'should test active player is switched after an attack' do
+			allow(player2).to receive(:reduce_hp)
+			game.attack(player2)
+			expect(game.active_player).to eq player2
+		end
+
+		it 'should test inactive player is switched after an attack' do
+			allow(player2).to receive(:reduce_hp)
+			game.attack(player2)
+			expect(game.inactive_player).to eq player1
+		end
 
 	end
 end

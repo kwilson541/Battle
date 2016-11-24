@@ -3,8 +3,11 @@
 <html>
 <body>
   <div>
-    <h1><%= @game.player2.name %> has been attacked </h1>
-    <h1>HP was reduced by <%= Player::DEFAULT_DAMAGE %>, <%= @game.player2.name %>'s HP = <%= @game.player2.hp %></h1>
+    <h1><%= @game.active_player.name %> has been attacked by <%= @game.inactive_player.name %></h1>
+    <br>
+    <h2>HP has been reduced by <%= Player::DEFAULT_DAMAGE %></h2>
+    <h1><%= @game.active_player.name %>'s HP = <%= @game.active_player.hp %></h1>
+    <h1><%= @game.inactive_player.name %>'s HP = <%= @game.inactive_player.hp %></h1>
   </div>
   <form action='/attack' method='get'>
     <input type='submit' value='Attack!'></input>
