@@ -5,8 +5,8 @@ describe "Entering names", :type => :feature do
   before do
     visit "/"
 
-    fill_in "player1_name", :with => "Bill"
-    fill_in "player2_name", :with => "Foo"
+    fill_in("player1_name",with: "Bill")
+    fill_in("player2_name",with: "Foo")
     click_button "SUBMIT"
   end
 
