@@ -16,17 +16,17 @@ class Battle < Sinatra::Base
     p params
     player1 = Player.new(params[:player1])
     player2 = Player.new(params[:player2])
-    $game = Game.new(player1, player2)
+    @game = Game.new_game(player1, player2)
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
     erb(:play)
   end
 
   get '/attack' do
-    @game = $game
+    @game = Game.instance
     if @game.dead_player.nil?
       @game.attack(@game.inactive_player)
       erb(:attack)
@@ -36,7 +36,7 @@ class Battle < Sinatra::Base
   end
 
   get '/dead' do
-    @game = $game
+    @game = Game.instance
     erb(:dead)
   end
 
