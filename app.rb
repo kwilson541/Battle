@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -19,16 +20,12 @@ enable :sessions
     p params
     @player1 = $player1
     @player2 = $player2
-    # @player1_hp = $player1.hp
-    # @player2_hp = $player2.hp
     erb(:play)
   end
 
   get "/attack" do
     @player1 = $player1
     @player2 = $player2
-    # @player1_hp = $player1.hp
-    # @player2_hp = $player2.hp
     erb(:attack)
   end
 

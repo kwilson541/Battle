@@ -1,5 +1,5 @@
 <%= @player2.name %> was punched in the jeans
 <br>
 
-<% @player2.reduce_hp %>
+<% Game.new.attack(@player2) %>
 BIF! BAM! SMASH! <%= @player2.name %> now has <%= @player2.hp %> HP, keep at 'em!"

@@ -7,11 +7,11 @@ class Player
 
 	def initialize(name)
 		@name = name
-    @hp = DEFAULT_HP
+		@hp = DEFAULT_HP
 	end
 
-  def reduce_hp
-    @hp -= DEFAULT_DAMAGE
-  end
+	def reduce_hp
+		@hp -= DEFAULT_DAMAGE
+	end
 
 end
