@@ -1,12 +1,11 @@
+require 'spec_helper'
+require_relative 'web_helpers'
+
 describe "Hitpoints" do
   context "when both players enter their names and get redirected" do
 
     before do
-      visit "/"
-
-      fill_in("player1_name",with: "Bill")
-      fill_in("player2_name",with: "Foo")
-      click_button "SUBMIT"
+      sign_in_and_play
     end
 
     it "should show player 2s hitpoints" do
