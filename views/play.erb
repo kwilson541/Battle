@@ -1,10 +1,10 @@
 <div>
-  Player 1 : <%= session[:player1].name %><br />
-    <%= session[:player1].name %>'s Hitpoints  <br/>
+  Player 1 : <%= @player1.name %><br />
+    <%= @player1.name %>'s Hitpoints <%= @player1.hit_points%> <br/>
 
-  Player 2 : <%= session[:player2].name %><br />
+  Player 2 : <%= @player2.name %><br />
 
-    <%= session[:player2].name %>'s Hitpoints <%= session[:player_2_hit_points]%>
+    <%= @player2.name %>'s Hitpoints <%= @player2.hit_points%>
 </div>
 
 <div>

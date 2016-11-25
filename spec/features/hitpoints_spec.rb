@@ -9,11 +9,11 @@ describe "Hitpoints" do
     end
 
     it "should show player 2s hitpoints" do
-      expect(page).to have_content("Player 2's Hitpoints")
+      expect(page).to have_content("Foo's Hitpoints")
     end
 
     it "should show player 1s hitpoints" do
-      expect(page).to have_content("Player 1's Hitpoints")
+      expect(page).to have_content("Bill's Hitpoints")
     end
   end
 end
