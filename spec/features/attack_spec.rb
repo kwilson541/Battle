@@ -6,5 +6,5 @@ describe "Attack" do
     click_button "Attack"
     expect(page.current_path).to eq "/attack"
   end
-
+  
 end

@@ -1,2 +1,3 @@
 <meta http-equiv="refresh" content="4; URL='/play'" />
-<p> Player 2 has been attacked!</p>
+<% session[:player_2_hit_points] = session[:player1].attack%>
+<p> Player 2:<%= session[:player2].name %> has been attacked by 10 points!</p>
