@@ -1,4 +1,4 @@
-require 'player.rb'
+require 'player'
 
 describe Player do
   subject(:player) {described_class.new("Bill")}
@@ -12,13 +12,8 @@ describe Player do
 
   context "when player 1 attacks" do
 
-    it "player 2 should receive damage" do
-      expect(player2).to receive(:receive_damage)
-      player.attack(player2)
-    end
-
     it "should reduce player 2's hit points by 10" do
-      player.attack(player2)
+      player2.receive_damage
       expect(player2.hit_points).to eq(40)
     end
   end

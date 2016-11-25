@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative './lib/player.rb'
+require_relative './lib/game.rb'
 
 enable :sessions
 
@@ -20,8 +21,9 @@ enable :sessions
   end
 
   post '/attack' do
+    @game = Game.new
     @player1 = session[:player1]
     @player2 = session[:player2]
-    @player1.attack(@player2)
+    @game.attack(@player2)
     erb(:attack)
   end
